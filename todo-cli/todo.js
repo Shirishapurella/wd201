@@ -29,7 +29,7 @@ const todoList = () => {
               item.dueDate === today
                 ? ""
                 : ` ${item.dueDate}`;
-            return ${checkbox} ${item.title}${formattedDate};
+            return `${checkbox} ${item.title}${formattedDate}`;
           }).join('\n');
     };
   
