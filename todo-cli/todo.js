@@ -14,12 +14,12 @@ const todoList = () => {
     return all.filter((todo) => !todo.completed && todo.dueDate < today);
   };
 
-  const dueToday = () => {
+  const due_Today = () => {
     const today = new Date().toISOString().split("T")[0];
     return all.filter((todo) => todo.dueDate === today);
   };
 
-  const dueLater = () => {
+  const due Later = () => {
     const today = new Date().toISOString().split("T")[0];
     return all.filter((todo) => !todo.completed && todo.dueDate > today);
   };
@@ -46,8 +46,8 @@ const todoList = () => {
     add,
     markAsComplete,
     overdue,
-    dueToday,
-    dueLater,
+    due_Today,
+    due Later,
     toDisplayableList,
   };
 };
@@ -88,15 +88,15 @@ const todoList = () => {
 // console.log("\n")
 
 // console.log("duetoday")
-// let itemsDueToday = todos.dueToday()
-// let formattedItemsDueToday = todos.toDisplayableList(itemsDueToday)
-// console.log(formattedItemsDueToday)
+// let itemsDueToday = todos.due_Today()
+// let formattedItemsDueToday = todos.toDisplayableList(itemsdue today)
+// console.log(formattedItemsdue today)
 // console.log("\n")
 
 // console.log("dueLater")
 // let itemsDueLater = todos.dueLater()
-// let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
-// console.log(formattedItemsDueLater)
+// let formattedItemsDue Later = todos.toDisplayableList(itemsDue Later)
+// console.log(formattedItemsDue Later)
 // console.log("\n\n")
 
 module.exports = todoList;
