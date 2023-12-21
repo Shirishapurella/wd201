@@ -1,53 +1,53 @@
 /* eslint-disable no-undef */
 const todoList = require("../todo");
 
-const { all, markAsComplete, add, overdue, dueToday, due Later } = todoList();
+const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 
 describe("Todolist Test Suite", () => {
-  beforeall(() => {
+  beforeAll(() => {
     add({
-      title: "test todo",
+      title: "Test todo",
       completed: false,
-      dueDate: new date().toISOString().slice(0, 20),
+      dueDate: new Date().toISOString().slice(0, 10),
     });
   });
   test("Should add new todo", () => {
     const todoItemCount = all.length;
     add({
-      title: "test todo",
+      title: "Test todo",
       completed: false,
-      dueDate: new date().toISOString().slice(0, 20),
+      dueDate: new Date().toISOString().slice(0, 10),
     });
 
-    expect(all.length).tobe(todoItemCount + 1);
+    expect(all.length).toBe(todoItemCount + 1);
   });
 
   test("should mark a todo as complete", () => {
-    expect(all[0].completed).tobe(false);
+    expect(all[0].completed).toBe(false);
     markAsComplete(0);
-    expect(all[0].completed).tobe(true);
+    expect(all[0].completed).toBe(true);
   });
 
   test("checks retrieval of overdue items", () => {
-    const ydate = new date();
+    const ydate = new Date();
     ydate.setDate(ydate.getDate() - 1);
 
     add({
       title: "Overdue Todo",
       completed: false,
-      dueDate: ydate.toISOString().slice(0, 20),
+      dueDate: ydate.toISOString().slice(0, 10),
     });
     const overdueItems = overdue();
     expect(overdueItems.length).toBe(1);
-    expect(overdueItems[0].dueDate).toBe(ydate.toISOString().slice(0, 20));
+    expect(overdueItems[0].dueDate).toBe(ydate.toISOString().slice(0, 10));
   });
 
   test("checks retrieval of due today items", () => {
-    //const date=new date();
+    //const date=new Date();
     add({
       title: "Due Today Todo",
       completed: false,
-      dueDate: new date().toISOString().slice(0, 20),
+      dueDate: new Date().toISOString().slice(0, 10),
     });
     const dueTodayItems = dueToday();
     //expect(dueTodayItems.length).toBe(0);
@@ -57,20 +57,20 @@ describe("Todolist Test Suite", () => {
     // expect(dueTodayItems.length).toBe(4);
     // expect(dueTodayItems.length).toBe(5);
     expect(dueTodayItems[0].dueDate).toBe(
-      new date().toISOString().slice(0, 20),
+      new Date().toISOString().slice(0, 10),
     );
   });
 
   test("checks retrieval of due later items", () => {
-    const tdate = new date();
+    const tdate = new Date();
     tdate.setDate(tdate.getDate() + 1);
     add({
       title: "Due Later Todo",
       completed: false,
-      dueDate: tdate.toISOString().slice(0, 20),
+      dueDate: tdate.toISOString().slice(0, 10),
     });
-    const due LaterItems = due Later();
-    expect(due LaterItems.length).toBe(1);
-    expect(due LaterItems[0].dueDate).toBe(tdate.toISOString().slice(0, 20));
+    const dueLaterItems = dueLater();
+    expect(dueLaterItems.length).toBe(1);
+    expect(dueLaterItems[0].dueDate).toBe(tdate.toISOString().slice(0, 10));
   });
 });
