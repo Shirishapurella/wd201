@@ -87,13 +87,13 @@ const todoList = () => {
 // console.log(formattedOverdues)
 // console.log("\n")
 
-// console.log("Due Today")
+// console.log("duetoday")
 // let itemsDueToday = todos.dueToday()
 // let formattedItemsDueToday = todos.toDisplayableList(itemsDueToday)
 // console.log(formattedItemsDueToday)
 // console.log("\n")
 
-// console.log("Due Later")
+// console.log("dueLater")
 // let itemsDueLater = todos.dueLater()
 // let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
 // console.log(formattedItemsDueLater)
